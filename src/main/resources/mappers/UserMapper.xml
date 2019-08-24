@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fenghongzhang.mapper.UserMapper">
+
+   <!-- 不加数据会为空 -->
+    <resultMap type="com.fenghongzhang.entity.User" id="UserResult">
+        <result property="u_id" column="u_id"/>
+        <result property="u_name" column="u_name"/>
+    </resultMap>
+ 
+
+    <!-- 查询所有的用户 -->
+    <select id="getAllUsers"  resultType="com.fenghongzhang.entity.User" resultMap="UserResult">
+        select u_id,u_name from blog_user;
+    </select>
+    
+</mapper> 
